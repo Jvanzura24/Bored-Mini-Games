@@ -14,6 +14,8 @@ enum Game: String, CaseIterable, Identifiable {
     case snake = "Snake"
     case memoryMatch = "Memory Match"
     case mergeTiles = "Merge Tiles"
+    case simon = "Simon"
+    case whackAMole = "Whack-a-Mole"
 
     var id: String { rawValue }
 
@@ -25,6 +27,8 @@ enum Game: String, CaseIterable, Identifiable {
         case .snake: "Eat and grow"
         case .memoryMatch: "Find the pairs"
         case .mergeTiles: "Combine to 2048"
+        case .simon: "Repeat the pattern"
+        case .whackAMole: "Tap the moles"
         }
     }
 
@@ -36,6 +40,8 @@ enum Game: String, CaseIterable, Identifiable {
         case .snake: "point.topleft.down.to.point.bottomright.curvepath.fill"
         case .memoryMatch: "square.grid.2x2.fill"
         case .mergeTiles: "square.stack.3d.up.fill"
+        case .simon: "circle.hexagongrid.fill"
+        case .whackAMole: "hare.fill"
         }
     }
 
@@ -47,6 +53,8 @@ enum Game: String, CaseIterable, Identifiable {
         case .snake: Color(red: 0.06, green: 0.63, blue: 0.68)
         case .memoryMatch: Color(red: 0.55, green: 0.31, blue: 0.86)
         case .mergeTiles: Color(red: 0.90, green: 0.25, blue: 0.49)
+        case .simon: Color(red: 0.36, green: 0.42, blue: 0.75)
+        case .whackAMole: Color(red: 0.62, green: 0.44, blue: 0.22)
         }
     }
 
@@ -58,6 +66,8 @@ enum Game: String, CaseIterable, Identifiable {
         case .snake: GameScreen(title: rawValue) { SnakeView() }
         case .memoryMatch: GameScreen(title: rawValue) { MemoryMatchView() }
         case .mergeTiles: GameScreen(title: rawValue) { MergeTilesView() }
+        case .simon: GameScreen(title: rawValue) { SimonView() }
+        case .whackAMole: GameScreen(title: rawValue) { WhackAMoleView() }
         }
     }
 }
