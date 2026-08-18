@@ -1,10 +1,4 @@
-# Xcode per-user state
-xcuserdata/
+AuthKey_*.p8
 *.xcuserstate
-
-# Build products
-build/
+xcuserdata/
 DerivedData/
-
-# macOS
-.DS_Store

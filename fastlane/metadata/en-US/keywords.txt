@@ -1,0 +1,1 @@
+mini games,puzzle,arcade,brain,math,word,memory,trivia,snake,solitaire

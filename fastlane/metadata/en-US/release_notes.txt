@@ -1,0 +1,1 @@
+Initial release with over 100 quick mini games, searchable game selection, instructions, high scores, and ad consent support.
