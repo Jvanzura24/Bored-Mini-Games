@@ -16,12 +16,16 @@ struct WhackAMoleView: View {
     @State private var whacked: Set<Int> = []
     @State private var score = 0
     @State private var timeRemaining = WhackAMoleView.roundLength
+    @State private var roundEndsAt: Date?
     @State private var isRunning = false
+    @AppStorage("difficulty.whackAMole") private var difficulty: Difficulty = .medium
 
     private let columns = Array(repeating: GridItem(.flexible(), spacing: 14), count: 3)
 
     var body: some View {
         VStack(spacing: 20) {
+            DifficultyPicker(difficulty: $difficulty)
+
             HStack(spacing: 40) {
                 scoreLabel("Score", score, .primary)
                 scoreLabel("Time", timeRemaining, timeRemaining <= 5 ? .red : .secondary)
@@ -53,7 +57,7 @@ struct WhackAMoleView: View {
             // Master loop: advances the timer and spawns moles once per tick
             // while a round is running. Ends automatically with the view.
             while !Task.isCancelled {
-                try? await Task.sleep(for: .milliseconds(700))
+                try? await Task.sleep(for: .milliseconds(difficulty.moleTickMilliseconds))
                 guard isRunning else { continue }
                 tick()
             }
@@ -91,18 +95,23 @@ struct WhackAMoleView: View {
     private func startGame() {
         score = 0
         timeRemaining = Self.roundLength
+        roundEndsAt = Date.now.addingTimeInterval(TimeInterval(Self.roundLength))
         activeMoles = []
         whacked = []
         isRunning = true
     }
 
     private func tick() {
-        timeRemaining -= 1
+        // The countdown follows the wall clock so the round is always the
+        // same length no matter how fast the moles cycle.
+        guard let roundEndsAt else { return }
+        timeRemaining = max(0, Int(roundEndsAt.timeIntervalSinceNow.rounded(.up)))
         if timeRemaining <= 0 {
-            timeRemaining = 0
             isRunning = false
+            self.roundEndsAt = nil
             activeMoles = []
             whacked = []
+            HighScoreStore.save(score, for: .whackAMole)
             return
         }
 
@@ -116,6 +125,18 @@ struct WhackAMoleView: View {
         guard isRunning, activeMoles.contains(hole), !whacked.contains(hole) else { return }
         whacked.insert(hole)
         score += 1
+    }
+}
+
+private extension Difficulty {
+    /// Milliseconds each batch of moles stays up before the next batch —
+    /// lower means less time to react.
+    var moleTickMilliseconds: Int {
+        switch self {
+        case .easy: 1000
+        case .medium: 700
+        case .hard: 450
+        }
     }
 }
 

@@ -2,8 +2,7 @@
 //  MergeTilesView.swift
 //  Bored Mini Games
 //
-//  Swipe to slide the tiles; equal tiles merge and double. Reach 2048
-//  (or just chase a high score).
+//  Swipe to slide the tiles; equal tiles merge and double. Chase a high score.
 //
 
 import SwiftUI

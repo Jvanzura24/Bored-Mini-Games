@@ -47,9 +47,12 @@ struct SnakeView: View {
     @State private var highScore = 0
     @State private var isRunning = false
     @State private var isGameOver = false
+    @AppStorage("difficulty.snake") private var difficulty: Difficulty = .medium
 
     var body: some View {
         VStack(spacing: 12) {
+            DifficultyPicker(difficulty: $difficulty)
+
             HStack {
                 Text("Score: \(score)")
                 Spacer()
@@ -108,7 +111,7 @@ struct SnakeView: View {
             .task {
                 // Game tick loop; ends automatically when the view goes away.
                 while !Task.isCancelled {
-                    try? await Task.sleep(for: .milliseconds(160))
+                    try? await Task.sleep(for: .milliseconds(difficulty.snakeTickMilliseconds))
                     tick()
                 }
             }
@@ -185,6 +188,17 @@ struct SnakeView: View {
         }
         if let spot = open.randomElement() {
             food = spot
+        }
+    }
+}
+
+private extension Difficulty {
+    /// Milliseconds between snake moves — lower means a faster snake.
+    var snakeTickMilliseconds: Int {
+        switch self {
+        case .easy: 200
+        case .medium: 160
+        case .hard: 110
         }
     }
 }

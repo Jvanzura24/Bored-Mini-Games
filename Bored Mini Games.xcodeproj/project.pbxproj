@@ -6,8 +6,102 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		63EA19D3302679D80022B04F /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 63EA19D2302679D80022B04F /* GoogleMobileAds */; };
+		63EA19D93026C2000022B04F /* InterstitialAdManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EA19D83026C2000022B04F /* InterstitialAdManager.swift */; };
+		63EA1A29302743210022B04F /* PalindromeCheckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EA1A28302743210022B04F /* PalindromeCheckView.swift */; };
+		63EA1A2B302743310022B04F /* BinaryFlipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EA1A2A302743310022B04F /* BinaryFlipView.swift */; };
+		63EA1A2D302743420022B04F /* FactorFindView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EA1A2C302743420022B04F /* FactorFindView.swift */; };
+		63EA1A2F302743580022B04F /* MemoryDigitsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EA1A2E302743580022B04F /* MemoryDigitsView.swift */; };
+		63EA1A313027436C0022B04F /* CoinStreakView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EA1A303027436C0022B04F /* CoinStreakView.swift */; };
+		63EA1A33302743800022B04F /* TemperatureFlipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EA1A32302743800022B04F /* TemperatureFlipView.swift */; };
+		63EA1A35302743950022B04F /* WordLengthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EA1A34302743950022B04F /* WordLengthView.swift */; };
+		63EA1A37302743A40022B04F /* TileFlipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EA1A36302743A40022B04F /* TileFlipView.swift */; };
+		63EA1A39302743BA0022B04F /* PowersQuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EA1A38302743BA0022B04F /* PowersQuizView.swift */; };
+		63EA1A3B302743D40022B04F /* SentenceOrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EA1A3A302743D40022B04F /* SentenceOrderView.swift */; };
+		63EA1A3D302743F30022B04F /* ShadowMatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EA1A3C302743F30022B04F /* ShadowMatchView.swift */; };
+		63EA1A3F302744090022B04F /* ReflexCatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EA1A3E302744090022B04F /* ReflexCatchView.swift */; };
+		63EA1A413027441E0022B04F /* SumTargetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EA1A403027441E0022B04F /* SumTargetView.swift */; };
+		63EA1A43302744350022B04F /* WordVowelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EA1A42302744350022B04F /* WordVowelView.swift */; };
+		63EA1A453027444D0022B04F /* GravityDropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EA1A443027444D0022B04F /* GravityDropView.swift */; };
+		63EA1A47302744A80022B04F /* PathNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EA1A46302744A80022B04F /* PathNumberView.swift */; };
+		63EA1A49302744B90022B04F /* TapSpeedDuelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EA1A48302744B90022B04F /* TapSpeedDuelView.swift */; };
+		63EA1A4B302744CD0022B04F /* NumberSortView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EA1A4A302744CD0022B04F /* NumberSortView.swift */; };
+		63EA1A4D302744E10022B04F /* QuickTypingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EA1A4C302744E10022B04F /* QuickTypingView.swift */; };
+		63EA1A4F302744F50022B04F /* GreaterLessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EA1A4E302744F50022B04F /* GreaterLessView.swift */; };
+		63EA1A51302745390022B04F /* MissingOpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EA1A50302745390022B04F /* MissingOpView.swift */; };
+		63EA1A53302745510022B04F /* ColorNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EA1A52302745510022B04F /* ColorNameView.swift */; };
+		63EA1A55302745710022B04F /* PinballBumperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EA1A54302745710022B04F /* PinballBumperView.swift */; };
+		63EA1A57302745920022B04F /* EvenOddSortView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EA1A56302745920022B04F /* EvenOddSortView.swift */; };
+		63EA1A59302745AA0022B04F /* DotConnectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EA1A58302745AA0022B04F /* DotConnectView.swift */; };
+		63EA1A5B302745F60022B04F /* LetterBombView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EA1A5A302745F60022B04F /* LetterBombView.swift */; };
+		63EA1A5D3027460F0022B04F /* MultiTapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EA1A5C3027460F0022B04F /* MultiTapView.swift */; };
+		63EA1A5F302746260022B04F /* SpotDiffView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EA1A5E302746260022B04F /* SpotDiffView.swift */; };
+		63EA1A61302746380022B04F /* ColorTrailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EA1A60302746380022B04F /* ColorTrailView.swift */; };
+		63EA1A63302746510022B04F /* FlashCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EA1A62302746510022B04F /* FlashCardView.swift */; };
+		63EA1A653027D59C0022B04F /* RomanNumeralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EA1A643027D59C0022B04F /* RomanNumeralView.swift */; };
+		63EA1A673027D5AB0022B04F /* CapitalCityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EA1A663027D5AB0022B04F /* CapitalCityView.swift */; };
+		63EA1A693027D5C30022B04F /* TriviaMixView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EA1A683027D5C30022B04F /* TriviaMixView.swift */; };
+		63EA1A6B3027D5DA0022B04F /* ColorBlendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EA1A6A3027D5DA0022B04F /* ColorBlendView.swift */; };
+		63EA1A6D3027D5EC0022B04F /* NumberBetweenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EA1A6C3027D5EC0022B04F /* NumberBetweenView.swift */; };
+		63EA1A6F3027D6040022B04F /* SyllableCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EA1A6E3027D6040022B04F /* SyllableCountView.swift */; };
+		63EA1A713027D6140022B04F /* AbbrevMatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EA1A703027D6140022B04F /* AbbrevMatchView.swift */; };
+		63EA1A733027D6270022B04F /* BalloonPopOrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EA1A723027D6270022B04F /* BalloonPopOrderView.swift */; };
+		63EA1A753027D63F0022B04F /* FlashAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EA1A743027D63F0022B04F /* FlashAddView.swift */; };
+		63EA1A773027D6580022B04F /* VisualPatternView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EA1A763027D6580022B04F /* VisualPatternView.swift */; };
+		63EA1A793027D66D0022B04F /* StroopSwitchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EA1A783027D66D0022B04F /* StroopSwitchView.swift */; };
+		63EA1A7B3027D67D0022B04F /* TileRotateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EA1A7A3027D67D0022B04F /* TileRotateView.swift */; };
+		63EA1A7D30288AEC0022B04F /* HighScoreStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EA1A7C30288AEC0022B04F /* HighScoreStore.swift */; };
+		63EA1A7F30288AFB0022B04F /* HighScoresView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EA1A7E30288AFB0022B04F /* HighScoresView.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		635ED172300A63B3003D42D5 /* Bored Mini Games.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bored Mini Games.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		63EA19D83026C2000022B04F /* InterstitialAdManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterstitialAdManager.swift; sourceTree = "<group>"; };
+		63EA1A28302743210022B04F /* PalindromeCheckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalindromeCheckView.swift; sourceTree = "<group>"; };
+		63EA1A2A302743310022B04F /* BinaryFlipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryFlipView.swift; sourceTree = "<group>"; };
+		63EA1A2C302743420022B04F /* FactorFindView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactorFindView.swift; sourceTree = "<group>"; };
+		63EA1A2E302743580022B04F /* MemoryDigitsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryDigitsView.swift; sourceTree = "<group>"; };
+		63EA1A303027436C0022B04F /* CoinStreakView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinStreakView.swift; sourceTree = "<group>"; };
+		63EA1A32302743800022B04F /* TemperatureFlipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureFlipView.swift; sourceTree = "<group>"; };
+		63EA1A34302743950022B04F /* WordLengthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordLengthView.swift; sourceTree = "<group>"; };
+		63EA1A36302743A40022B04F /* TileFlipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileFlipView.swift; sourceTree = "<group>"; };
+		63EA1A38302743BA0022B04F /* PowersQuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowersQuizView.swift; sourceTree = "<group>"; };
+		63EA1A3A302743D40022B04F /* SentenceOrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentenceOrderView.swift; sourceTree = "<group>"; };
+		63EA1A3C302743F30022B04F /* ShadowMatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowMatchView.swift; sourceTree = "<group>"; };
+		63EA1A3E302744090022B04F /* ReflexCatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReflexCatchView.swift; sourceTree = "<group>"; };
+		63EA1A403027441E0022B04F /* SumTargetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SumTargetView.swift; sourceTree = "<group>"; };
+		63EA1A42302744350022B04F /* WordVowelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordVowelView.swift; sourceTree = "<group>"; };
+		63EA1A443027444D0022B04F /* GravityDropView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GravityDropView.swift; sourceTree = "<group>"; };
+		63EA1A46302744A80022B04F /* PathNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathNumberView.swift; sourceTree = "<group>"; };
+		63EA1A48302744B90022B04F /* TapSpeedDuelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapSpeedDuelView.swift; sourceTree = "<group>"; };
+		63EA1A4A302744CD0022B04F /* NumberSortView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberSortView.swift; sourceTree = "<group>"; };
+		63EA1A4C302744E10022B04F /* QuickTypingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickTypingView.swift; sourceTree = "<group>"; };
+		63EA1A4E302744F50022B04F /* GreaterLessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreaterLessView.swift; sourceTree = "<group>"; };
+		63EA1A50302745390022B04F /* MissingOpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissingOpView.swift; sourceTree = "<group>"; };
+		63EA1A52302745510022B04F /* ColorNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorNameView.swift; sourceTree = "<group>"; };
+		63EA1A54302745710022B04F /* PinballBumperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinballBumperView.swift; sourceTree = "<group>"; };
+		63EA1A56302745920022B04F /* EvenOddSortView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvenOddSortView.swift; sourceTree = "<group>"; };
+		63EA1A58302745AA0022B04F /* DotConnectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotConnectView.swift; sourceTree = "<group>"; };
+		63EA1A5A302745F60022B04F /* LetterBombView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterBombView.swift; sourceTree = "<group>"; };
+		63EA1A5C3027460F0022B04F /* MultiTapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiTapView.swift; sourceTree = "<group>"; };
+		63EA1A5E302746260022B04F /* SpotDiffView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotDiffView.swift; sourceTree = "<group>"; };
+		63EA1A60302746380022B04F /* ColorTrailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTrailView.swift; sourceTree = "<group>"; };
+		63EA1A62302746510022B04F /* FlashCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardView.swift; sourceTree = "<group>"; };
+		63EA1A643027D59C0022B04F /* RomanNumeralView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RomanNumeralView.swift; sourceTree = "<group>"; };
+		63EA1A663027D5AB0022B04F /* CapitalCityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapitalCityView.swift; sourceTree = "<group>"; };
+		63EA1A683027D5C30022B04F /* TriviaMixView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaMixView.swift; sourceTree = "<group>"; };
+		63EA1A6A3027D5DA0022B04F /* ColorBlendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorBlendView.swift; sourceTree = "<group>"; };
+		63EA1A6C3027D5EC0022B04F /* NumberBetweenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberBetweenView.swift; sourceTree = "<group>"; };
+		63EA1A6E3027D6040022B04F /* SyllableCountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyllableCountView.swift; sourceTree = "<group>"; };
+		63EA1A703027D6140022B04F /* AbbrevMatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbbrevMatchView.swift; sourceTree = "<group>"; };
+		63EA1A723027D6270022B04F /* BalloonPopOrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalloonPopOrderView.swift; sourceTree = "<group>"; };
+		63EA1A743027D63F0022B04F /* FlashAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashAddView.swift; sourceTree = "<group>"; };
+		63EA1A763027D6580022B04F /* VisualPatternView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualPatternView.swift; sourceTree = "<group>"; };
+		63EA1A783027D66D0022B04F /* StroopSwitchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StroopSwitchView.swift; sourceTree = "<group>"; };
+		63EA1A7A3027D67D0022B04F /* TileRotateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileRotateView.swift; sourceTree = "<group>"; };
+		63EA1A7C30288AEC0022B04F /* HighScoreStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighScoreStore.swift; sourceTree = "<group>"; };
+		63EA1A7E30288AFB0022B04F /* HighScoresView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighScoresView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -23,6 +117,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63EA19D3302679D80022B04F /* GoogleMobileAds in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -34,6 +129,51 @@
 			children = (
 				635ED174300A63B3003D42D5 /* Bored Mini Games */,
 				635ED173300A63B3003D42D5 /* Products */,
+				63EA19D83026C2000022B04F /* InterstitialAdManager.swift */,
+				63EA1A28302743210022B04F /* PalindromeCheckView.swift */,
+				63EA1A2A302743310022B04F /* BinaryFlipView.swift */,
+				63EA1A2C302743420022B04F /* FactorFindView.swift */,
+				63EA1A2E302743580022B04F /* MemoryDigitsView.swift */,
+				63EA1A303027436C0022B04F /* CoinStreakView.swift */,
+				63EA1A32302743800022B04F /* TemperatureFlipView.swift */,
+				63EA1A34302743950022B04F /* WordLengthView.swift */,
+				63EA1A36302743A40022B04F /* TileFlipView.swift */,
+				63EA1A38302743BA0022B04F /* PowersQuizView.swift */,
+				63EA1A3A302743D40022B04F /* SentenceOrderView.swift */,
+				63EA1A3C302743F30022B04F /* ShadowMatchView.swift */,
+				63EA1A3E302744090022B04F /* ReflexCatchView.swift */,
+				63EA1A403027441E0022B04F /* SumTargetView.swift */,
+				63EA1A42302744350022B04F /* WordVowelView.swift */,
+				63EA1A443027444D0022B04F /* GravityDropView.swift */,
+				63EA1A46302744A80022B04F /* PathNumberView.swift */,
+				63EA1A48302744B90022B04F /* TapSpeedDuelView.swift */,
+				63EA1A4A302744CD0022B04F /* NumberSortView.swift */,
+				63EA1A4C302744E10022B04F /* QuickTypingView.swift */,
+				63EA1A4E302744F50022B04F /* GreaterLessView.swift */,
+				63EA1A50302745390022B04F /* MissingOpView.swift */,
+				63EA1A52302745510022B04F /* ColorNameView.swift */,
+				63EA1A54302745710022B04F /* PinballBumperView.swift */,
+				63EA1A56302745920022B04F /* EvenOddSortView.swift */,
+				63EA1A58302745AA0022B04F /* DotConnectView.swift */,
+				63EA1A5A302745F60022B04F /* LetterBombView.swift */,
+				63EA1A5C3027460F0022B04F /* MultiTapView.swift */,
+				63EA1A5E302746260022B04F /* SpotDiffView.swift */,
+				63EA1A60302746380022B04F /* ColorTrailView.swift */,
+				63EA1A62302746510022B04F /* FlashCardView.swift */,
+				63EA1A643027D59C0022B04F /* RomanNumeralView.swift */,
+				63EA1A663027D5AB0022B04F /* CapitalCityView.swift */,
+				63EA1A683027D5C30022B04F /* TriviaMixView.swift */,
+				63EA1A6A3027D5DA0022B04F /* ColorBlendView.swift */,
+				63EA1A6C3027D5EC0022B04F /* NumberBetweenView.swift */,
+				63EA1A6E3027D6040022B04F /* SyllableCountView.swift */,
+				63EA1A703027D6140022B04F /* AbbrevMatchView.swift */,
+				63EA1A723027D6270022B04F /* BalloonPopOrderView.swift */,
+				63EA1A743027D63F0022B04F /* FlashAddView.swift */,
+				63EA1A763027D6580022B04F /* VisualPatternView.swift */,
+				63EA1A783027D66D0022B04F /* StroopSwitchView.swift */,
+				63EA1A7A3027D67D0022B04F /* TileRotateView.swift */,
+				63EA1A7C30288AEC0022B04F /* HighScoreStore.swift */,
+				63EA1A7E30288AFB0022B04F /* HighScoresView.swift */,
 			);
 			sourceTree = "<group>";
 		};
@@ -65,6 +205,7 @@
 			);
 			name = "Bored Mini Games";
 			packageProductDependencies = (
+				63EA19D2302679D80022B04F /* GoogleMobileAds */,
 			);
 			productName = "Bored Mini Games";
 			productReference = 635ED172300A63B3003D42D5 /* Bored Mini Games.app */;
@@ -94,6 +235,9 @@
 			);
 			mainGroup = 635ED169300A63B3003D42D5;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				63EA19D1302679D80022B04F /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 635ED173300A63B3003D42D5 /* Products */;
 			projectDirPath = "";
@@ -119,6 +263,51 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63EA1A6D3027D5EC0022B04F /* NumberBetweenView.swift in Sources */,
+				63EA1A453027444D0022B04F /* GravityDropView.swift in Sources */,
+				63EA1A57302745920022B04F /* EvenOddSortView.swift in Sources */,
+				63EA1A61302746380022B04F /* ColorTrailView.swift in Sources */,
+				63EA1A713027D6140022B04F /* AbbrevMatchView.swift in Sources */,
+				63EA1A653027D59C0022B04F /* RomanNumeralView.swift in Sources */,
+				63EA1A43302744350022B04F /* WordVowelView.swift in Sources */,
+				63EA1A63302746510022B04F /* FlashCardView.swift in Sources */,
+				63EA1A2B302743310022B04F /* BinaryFlipView.swift in Sources */,
+				63EA1A55302745710022B04F /* PinballBumperView.swift in Sources */,
+				63EA1A7B3027D67D0022B04F /* TileRotateView.swift in Sources */,
+				63EA19D93026C2000022B04F /* InterstitialAdManager.swift in Sources */,
+				63EA1A5D3027460F0022B04F /* MultiTapView.swift in Sources */,
+				63EA1A6F3027D6040022B04F /* SyllableCountView.swift in Sources */,
+				63EA1A4D302744E10022B04F /* QuickTypingView.swift in Sources */,
+				63EA1A47302744A80022B04F /* PathNumberView.swift in Sources */,
+				63EA1A7D30288AEC0022B04F /* HighScoreStore.swift in Sources */,
+				63EA1A793027D66D0022B04F /* StroopSwitchView.swift in Sources */,
+				63EA1A37302743A40022B04F /* TileFlipView.swift in Sources */,
+				63EA1A2D302743420022B04F /* FactorFindView.swift in Sources */,
+				63EA1A5B302745F60022B04F /* LetterBombView.swift in Sources */,
+				63EA1A733027D6270022B04F /* BalloonPopOrderView.swift in Sources */,
+				63EA1A3F302744090022B04F /* ReflexCatchView.swift in Sources */,
+				63EA1A3D302743F30022B04F /* ShadowMatchView.swift in Sources */,
+				63EA1A6B3027D5DA0022B04F /* ColorBlendView.swift in Sources */,
+				63EA1A773027D6580022B04F /* VisualPatternView.swift in Sources */,
+				63EA1A49302744B90022B04F /* TapSpeedDuelView.swift in Sources */,
+				63EA1A3B302743D40022B04F /* SentenceOrderView.swift in Sources */,
+				63EA1A4F302744F50022B04F /* GreaterLessView.swift in Sources */,
+				63EA1A313027436C0022B04F /* CoinStreakView.swift in Sources */,
+				63EA1A5F302746260022B04F /* SpotDiffView.swift in Sources */,
+				63EA1A59302745AA0022B04F /* DotConnectView.swift in Sources */,
+				63EA1A2F302743580022B04F /* MemoryDigitsView.swift in Sources */,
+				63EA1A35302743950022B04F /* WordLengthView.swift in Sources */,
+				63EA1A4B302744CD0022B04F /* NumberSortView.swift in Sources */,
+				63EA1A29302743210022B04F /* PalindromeCheckView.swift in Sources */,
+				63EA1A53302745510022B04F /* ColorNameView.swift in Sources */,
+				63EA1A413027441E0022B04F /* SumTargetView.swift in Sources */,
+				63EA1A693027D5C30022B04F /* TriviaMixView.swift in Sources */,
+				63EA1A51302745390022B04F /* MissingOpView.swift in Sources */,
+				63EA1A753027D63F0022B04F /* FlashAddView.swift in Sources */,
+				63EA1A39302743BA0022B04F /* PowersQuizView.swift in Sources */,
+				63EA1A33302743800022B04F /* TemperatureFlipView.swift in Sources */,
+				63EA1A673027D5AB0022B04F /* CapitalCityView.swift in Sources */,
+				63EA1A7F30288AFB0022B04F /* HighScoresView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,6 +445,7 @@
 				DEVELOPMENT_TEAM = DF5KRYBGQ7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Bored-Mini-Games-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -293,6 +483,7 @@
 				DEVELOPMENT_TEAM = DF5KRYBGQ7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Bored-Mini-Games-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -342,6 +533,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		63EA19D1302679D80022B04F /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 13.7.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		63EA19D2302679D80022B04F /* GoogleMobileAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 63EA19D1302679D80022B04F /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
+			productName = GoogleMobileAds;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 635ED16A300A63B3003D42D5 /* Project object */;
 }

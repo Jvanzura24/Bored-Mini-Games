@@ -24,18 +24,41 @@ struct PaddleBallView: View {
     @State private var playState: PlayState = .waitingToServe
     @State private var fieldSize: CGSize = .zero
     @State private var serveDown = true
+    @AppStorage("difficulty.paddleBall") private var difficulty: Difficulty = .medium
 
     private let paddleWidth: CGFloat = 90
     private let paddleHeight: CGFloat = 14
     private let ballSize: CGFloat = 16
     private let winningScore = 7
-    private let computerSpeed: CGFloat = 3.4
-    private let maxBallSpeed: CGFloat = 9
+
+    private var computerSpeed: CGFloat {
+        switch difficulty {
+        case .easy: 2.6
+        case .medium: 3.4
+        case .hard: 4.5
+        }
+    }
+
+    private var maxBallSpeed: CGFloat {
+        switch difficulty {
+        case .easy: 8
+        case .medium: 9
+        case .hard: 11
+        }
+    }
 
     private var playerPaddleY: CGFloat { fieldSize.height - 50 }
     private var computerPaddleY: CGFloat { 50 }
 
     var body: some View {
+        VStack(spacing: 10) {
+            DifficultyPicker(difficulty: $difficulty)
+                .padding(.top, 8)
+            playField
+        }
+    }
+
+    private var playField: some View {
         GeometryReader { geo in
             ZStack {
                 Color.black
@@ -130,8 +153,8 @@ struct PaddleBallView: View {
 
     private func serve() {
         ballPosition = CGPoint(x: fieldSize.width / 2, y: fieldSize.height / 2)
-        ballVelocity = CGVector(dx: CGFloat.random(in: -2.5...2.5),
-                                dy: serveDown ? 4 : -4)
+        ballVelocity = CGVector(dx: CGFloat.random(in: -3...3),
+                                dy: serveDown ? 5 : -5)
         playState = .playing
     }
 

@@ -35,7 +35,8 @@ struct SimonView: View {
     @State private var inputIndex = 0
     @State private var phase: Phase = .idle
     @State private var litPad: Pad?
-    @State private var bestScore = 0
+    @AppStorage("highScore.Pattern Recall") private var bestScore = 0
+    @AppStorage("difficulty.simon") private var difficulty: Difficulty = .medium
 
     private var score: Int { max(0, sequence.count - (phase == .gameOver ? 1 : 0)) }
 
@@ -43,6 +44,8 @@ struct SimonView: View {
 
     var body: some View {
         VStack(spacing: 20) {
+            DifficultyPicker(difficulty: $difficulty)
+
             HStack(spacing: 40) {
                 scoreLabel("Round", score, .primary)
                 scoreLabel("Best", bestScore, .secondary)
@@ -118,9 +121,9 @@ struct SimonView: View {
         try? await Task.sleep(for: .milliseconds(500))
         for pad in sequence {
             litPad = pad
-            try? await Task.sleep(for: .milliseconds(400))
+            try? await Task.sleep(for: .milliseconds(difficulty.simonLitMilliseconds))
             litPad = nil
-            try? await Task.sleep(for: .milliseconds(200))
+            try? await Task.sleep(for: .milliseconds(difficulty.simonGapMilliseconds))
         }
         phase = .awaitingInput
     }
@@ -148,6 +151,26 @@ struct SimonView: View {
             }
         } else {
             phase = .gameOver
+        }
+    }
+}
+
+private extension Difficulty {
+    /// How long each pad stays lit during playback — faster is harder to follow.
+    var simonLitMilliseconds: Int {
+        switch self {
+        case .easy: 500
+        case .medium: 400
+        case .hard: 240
+        }
+    }
+
+    /// Pause between pads during playback.
+    var simonGapMilliseconds: Int {
+        switch self {
+        case .easy: 260
+        case .medium: 200
+        case .hard: 120
         }
     }
 }

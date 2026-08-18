@@ -2,8 +2,8 @@
 //  MemoryMatchView.swift
 //  Bored Mini Games
 //
-//  Flip cards two at a time and find all eight matching pairs in as few
-//  moves as possible.
+//  Flip cards two at a time and find all the matching pairs in as few
+//  moves as possible. Difficulty sets the number of pairs on the board.
 //
 
 import SwiftUI
@@ -25,20 +25,27 @@ struct MemoryMatchView: View {
         ("bolt.fill", .cyan),
         ("leaf.fill", .green),
         ("flame.fill", .pink),
-        ("drop.fill", .blue)
+        ("drop.fill", .blue),
+        ("pawprint.fill", .brown),
+        ("snowflake", .teal)
     ]
 
-    @State private var cards: [MemoryCard] = Self.makeDeck()
+    @State private var cards: [MemoryCard] = []
     @State private var firstFlippedIndex: Int?
     @State private var moves = 0
     @State private var isBusy = false
+    @AppStorage("difficulty.memoryMatch") private var difficulty: Difficulty = .medium
 
-    private var allMatched: Bool { cards.allSatisfy(\.isMatched) }
+    private var allMatched: Bool { !cards.isEmpty && cards.allSatisfy(\.isMatched) }
 
-    private let columns = Array(repeating: GridItem(.flexible(), spacing: 10), count: 4)
+    private var columns: [GridItem] {
+        Array(repeating: GridItem(.flexible(), spacing: 10), count: difficulty.memoryColumnCount)
+    }
 
     var body: some View {
         VStack(spacing: 16) {
+            DifficultyPicker(difficulty: $difficulty)
+
             Text("Moves: \(moves)")
                 .font(.headline.monospacedDigit())
 
@@ -62,6 +69,9 @@ struct MemoryMatchView: View {
             Spacer(minLength: 0)
         }
         .padding(.vertical)
+        .onChange(of: difficulty, initial: true) {
+            resetGame()
+        }
     }
 
     private func cardView(_ card: MemoryCard) -> some View {
@@ -116,16 +126,36 @@ struct MemoryMatchView: View {
     }
 
     private func resetGame() {
-        cards = Self.makeDeck()
+        cards = Self.makeDeck(pairs: difficulty.memoryPairCount)
         firstFlippedIndex = nil
         moves = 0
         isBusy = false
     }
 
-    private static func makeDeck() -> [MemoryCard] {
-        (symbolSet + symbolSet)
+    private static func makeDeck(pairs: Int) -> [MemoryCard] {
+        let symbols = symbolSet.shuffled().prefix(pairs)
+        return (symbols + symbols)
             .map { MemoryCard(symbol: $0.0, color: $0.1) }
             .shuffled()
+    }
+}
+
+private extension Difficulty {
+    var memoryPairCount: Int {
+        switch self {
+        case .easy: 6
+        case .medium: 8
+        case .hard: 10
+        }
+    }
+
+    /// Column counts chosen so every board is four rows tall.
+    var memoryColumnCount: Int {
+        switch self {
+        case .easy: 3
+        case .medium: 4
+        case .hard: 5
+        }
     }
 }
 

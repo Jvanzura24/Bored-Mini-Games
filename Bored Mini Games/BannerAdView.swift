@@ -2,9 +2,7 @@
 //  BannerAdView.swift
 //  Bored Mini Games
 //
-//  Shows a standard 320x50 banner ad at the bottom of each game screen.
-//  Only banner ads are used — no interstitial or full-screen formats — and
-//  the banner lives outside the game's play area so it never affects gameplay.
+//  Shows a standard 320x50 banner ad at the bottom of the home screen.
 //
 //  SETUP: This file compiles with or without the Google Mobile Ads SDK.
 //  To enable real ads:
@@ -19,19 +17,26 @@
 import SwiftUI
 
 enum AdConfig {
-    /// Google's official *test* banner ad unit ID. Replace with your own
-    /// AdMob banner ad unit ID before releasing to the App Store.
-    static let bannerAdUnitID = "ca-app-pub-3940256099942544/2934735716"
+    static let bannerAdUnitID = "ca-app-pub-3839631796835260/1811189935"
+    static let interstitialAdUnitID = "ca-app-pub-3839631796835260/6663674328"
 }
 
 #if canImport(GoogleMobileAds)
 import GoogleMobileAds
 
 struct BannerAdView: View {
+    let canRequestAds: Bool
+
+    init(canRequestAds: Bool = true) {
+        self.canRequestAds = canRequestAds
+    }
+
     var body: some View {
-        BannerAdRepresentable()
-            .frame(height: 50)
-            .frame(maxWidth: .infinity)
+        if canRequestAds {
+            BannerAdRepresentable()
+                .frame(height: 50)
+                .frame(maxWidth: .infinity)
+        }
     }
 }
 
@@ -50,6 +55,12 @@ private struct BannerAdRepresentable: UIViewRepresentable {
 }
 #else
 struct BannerAdView: View {
+    let canRequestAds: Bool
+
+    init(canRequestAds: Bool = true) {
+        self.canRequestAds = canRequestAds
+    }
+
     var body: some View {
         // Google Mobile Ads SDK not installed yet; reserve no space.
         EmptyView()

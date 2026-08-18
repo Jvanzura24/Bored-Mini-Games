@@ -3,7 +3,8 @@
 //  Bored Mini Games
 //
 //  Tic-tac-toe against a computer opponent. Hard mode uses minimax and
-//  plays perfectly; Easy mode picks random open squares.
+//  plays perfectly, Easy mode picks random open squares, and Medium mixes
+//  the two.
 //
 
 import SwiftUI
@@ -16,16 +17,11 @@ struct TicTacToeView: View {
         var color: Color { self == .x ? .blue : .red }
     }
 
-    private enum Difficulty: String, CaseIterable {
-        case easy = "Easy"
-        case hard = "Hard"
-    }
-
     @State private var board: [Player?] = Array(repeating: nil, count: 9)
     @State private var isPlayerTurn = true
     @State private var isRoundOver = false
     @State private var statusText = "Your turn — you are X"
-    @State private var difficulty: Difficulty = .hard
+    @AppStorage("difficulty.ticTacToe") private var difficulty: Difficulty = .medium
     @State private var playerWins = 0
     @State private var computerWins = 0
     @State private var draws = 0
@@ -38,11 +34,7 @@ struct TicTacToeView: View {
 
     var body: some View {
         VStack(spacing: 20) {
-            Picker("Difficulty", selection: $difficulty) {
-                ForEach(Difficulty.allCases, id: \.self) { Text($0.rawValue) }
-            }
-            .pickerStyle(.segmented)
-            .padding(.horizontal, 40)
+            DifficultyPicker(difficulty: $difficulty)
 
             HStack(spacing: 24) {
                 scoreLabel("You", playerWins, .blue)
@@ -117,6 +109,9 @@ struct TicTacToeView: View {
         switch difficulty {
         case .easy:
             choice = openSquares.randomElement()!
+        case .medium:
+            // Plays perfectly half the time, so it can be outsmarted.
+            choice = Bool.random() ? bestMove() : openSquares.randomElement()!
         case .hard:
             choice = bestMove()
         }
